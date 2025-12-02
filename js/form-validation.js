@@ -31,9 +31,11 @@ const normalizeHashtags = (tagString) => tagString
   .split(' ')
   .filter((tag) => Boolean(tag.length));
 
-const hasValidHashtags = (value) => normalizeHashtags(value).every((tag) => VALID_SYMBOLS.test(tag));
+const hasValidHashtags = (value) =>
+  normalizeHashtags(value).every((tag) => VALID_SYMBOLS.test(tag));
 
-const hasValidCount = (value) => normalizeHashtags(value).length <= MAX_HASHTAG_COUNT;
+const hasValidCount = (value) =>
+  normalizeHashtags(value).length <= MAX_HASHTAG_COUNT;
 
 const hasUniqueHashtags = (value) => {
   const lowerCaseTags = normalizeHashtags(value).map((tag) => tag.toLowerCase());
